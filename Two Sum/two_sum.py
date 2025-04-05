@@ -19,7 +19,7 @@ Output: [0,1]
 
 
 class Solution(object):
-    def two_sum(self, nums, target):
+    def two_sum_optimized(self, nums, target):
         hashmap = {}
         for index, element in enumerate(nums):
             complement = target - element
@@ -27,7 +27,17 @@ class Solution(object):
                 return [index, hashmap[complement]]
             hashmap[element] = index
 
+    def two_sum_brute_force(self, nums, target):
+        length = len(nums)
+        for i in range(length - 1):
+            for j in range(i + 1, length):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
 
-obj = Solution()
-value = obj.two_sum([2, 3, 4, 7], 9)
-print(value)
+
+if __name__ == "__main__":
+    obj = Solution()
+    result1 = obj.two_sum_optimized([2, 3, 4, 7], 9)
+    print(result1)
+    result2 = obj.two_sum_brute_force([2, 3, 4, 7], 9)
+    print(result2)
