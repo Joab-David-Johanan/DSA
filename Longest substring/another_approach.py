@@ -21,7 +21,7 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 
 
 class Solution:
-    def longest_substring(s):
+    def longest_substring(self, s):
         sub = {}
         cur_sub_start = 0
         cur_len = 0
