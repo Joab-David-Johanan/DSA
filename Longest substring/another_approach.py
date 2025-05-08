@@ -20,26 +20,28 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 """
 
 
-def longest_substring(s):
-    sub = {}
-    cur_sub_start = 0
-    cur_len = 0
-    longest = 0
+class Solution:
+    def longest_substring(s):
+        sub = {}
+        cur_sub_start = 0
+        cur_len = 0
+        longest = 0
 
-    for index, letter in enumerate(s):
+        for index, letter in enumerate(s):
 
-        if letter in sub and sub[letter] >= cur_sub_start:
-            cur_sub_start = sub[letter] + 1
-            cur_len = index - sub[letter]
-            sub[letter] = index
+            if letter in sub and sub[letter] >= cur_sub_start:
+                cur_sub_start = sub[letter] + 1
+                cur_len = index - sub[letter]
+                sub[letter] = index
 
-        else:
-            sub[letter] = index
-            cur_len += 1
-            if cur_len > longest:
-                longest = cur_len
-    return longest
+            else:
+                sub[letter] = index
+                cur_len += 1
+                if cur_len > longest:
+                    longest = cur_len
+        return longest
 
 
-value = longest_substring("abcdecfgh")
+obj = Solution()
+value = obj.longest_substring("abcdecfgh")
 print(value)
