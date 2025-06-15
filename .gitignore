@@ -171,7 +171,7 @@ cython_debug/
 .ruff_cache/
 
 #idea
-.idea/
+**/.idea/
 
 # PyPI configuration file
 .pypirc
